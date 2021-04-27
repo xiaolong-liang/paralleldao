@@ -1,4 +1,5 @@
-from server import server, vega_server
+from server import futarchy_server
 
-server.launch()
+# server.launch()
 # vega_server.launch()
+futarchy_server.launch()

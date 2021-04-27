@@ -1,3 +1,3 @@
-from model import SimpleModel 
-vote_model = SimpleModel()
+from model import Furtarchy
+vote_model = Furtarchy(300, 10)
 vote_model.step()

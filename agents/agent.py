@@ -1,5 +1,6 @@
 import math
-from mesa import Agent
+from mesa import Agent, Model
+import random
 
 # class Agent(object):
 #     def __init__(self, _id, position, states):
@@ -55,7 +56,7 @@ class SpatialAgent(Agent):
     def likes(self, proposal):
         x = self.pos
         y = proposal.pos
-        sum_result = sum([math.pow(i-j, 2)for i,j in zip(x,y)])
+        sum_result = sum([math.pow(i-j, 2)for i, j in zip(x, y)])
         dist = math.sqrt(sum_result)
         return dist
 
@@ -66,7 +67,7 @@ class SpatialAgent(Agent):
 
     def check_intent(self):
         pass
-        
+
     def update_intent(self):
         pass
 
@@ -99,3 +100,62 @@ class SpatialAgent(Agent):
     @property
     def y(self):
         return self.pos[1]
+
+
+class FutarchyRandomAgent(Agent):
+    def __init__(self, unique_id: int, model: Model, market, system, pos) -> None:
+        super().__init__(unique_id, model)
+        self.unique_id = unique_id
+        self.model = model
+        self.market = market
+        self.system = system
+        self.token = 10
+        self.no_token = 0
+        self.yes_token = 0
+        self.pos = pos
+        self.wealth = self.token
+        self.voted = False
+
+    def step(self) -> None:
+        proposals = self.system.observe(self)
+        if proposals:
+            target = proposals[0]
+        else:
+            return
+        dice = random.random()
+        val = 0
+        if dice < 0.25:
+            price = self.market.calc_price(target._id, 1, 0)
+            if price <= self.token:
+                val = self.market.buy(
+                    target._id, self.unique_id, 'yes_token', 1)
+                self.yes_token += 1
+                self.system.vote(self, target._id, 'yes')
+                self.voted = True
+
+        elif dice > 0.25 and dice < 0.5:
+            if self.yes_token >= 1:
+                val = self.market.sell(
+                    target._id, self.unique_id, 'yes_token', 1)
+                self.yes_token -= 1
+        elif dice > 0.5 and dice < 0.75:
+
+            if self.no_token >= 1:
+                val = self.market.sell(
+                    target._id, self.unique_id, 'no_token', 1)
+                self.no_token -= 1
+        elif dice > 0.75:
+            price = self.market.calc_price(target._id, 0, 1)
+            if price <= self.token:
+                val = self.market.buy(
+                    target._id, self.unique_id, 'no_token', 1)
+                self.no_token += 1
+            self.system.vote(self, target._id, 'no')
+            self.voted = True
+
+        self.token -= val
+        self.wealth = self.token + self.no_token * self.market.calc_price(
+            target._id, 0, 1) + self.yes_token * self.market.calc_price(target._id, 1, 0)
+        # self.wealth = self.token + self.no_token * self.market.calc_price(target._id, 0, 1)
+        # self.wealth = self.token + self.yes_token * self.market.calc_price(target._id, 1, 0)
+        return super().step()

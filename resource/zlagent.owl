@@ -1,0 +1,2029 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#"
+     xml:base="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+     xmlns:swrla="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#"
+     xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+     xmlns:zlagent="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent">
+        <rdfs:comment>zero intelligence agent, which will trade without strategy</rdfs:comment>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled -->
+
+    <owl:AnnotationProperty rdf:about="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#activateProposal -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#activateProposal">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#System"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#Proposal"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#counterToken -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#counterToken">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#Token"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#Token"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#currentGoal -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#currentGoal">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#Agent"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#Goal"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#currentGoalReady -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#currentGoalReady">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#Agent"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#Goal"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#currentPlan -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#currentPlan">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#Agent"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#Plan"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#currentProposal -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#currentProposal">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#Agent"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#Proposal"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#currentState -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#currentState">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#Agent"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#hasAction -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#hasAction">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#Plan"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#Action"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#hasNoToken -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#hasNoToken">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#noTokenOf"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#Proposal"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#ConditionalToken"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#NoToken"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#Token"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#hasPermssion -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#hasPermssion">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#Agent"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#Permission"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#hasYesToken -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#hasYesToken">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#yesTokenOf"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#Proposal"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#ConditionalToken"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#Token"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#YesToken"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#myStrategy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#myStrategy">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#Agent"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#Strategy"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#noTokenOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#noTokenOf">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#subGoal -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#subGoal">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#Goal"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#Goal"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#targetProposal -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#targetProposal">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#VoteAction"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#Proposal"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#targetToken -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#targetToken">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#Action"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#BuyAction"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#MarketAction"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#Token"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#yesTokenOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#yesTokenOf">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#buyAmount -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#buyAmount">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#Action"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#BuyAction"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#MarketAction"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#currentPrice -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#currentPrice">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#Token"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#expectBenefit -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#expectBenefit">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#ConditionalToken"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#NoToken"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#Token"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#YesToken"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#expectBenefitReady -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#expectBenefitReady">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#ConditionalToken"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#NoToken"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#Token"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#YesToken"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#hasFee -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#hasFee">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#System"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#hasPriorities -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#hasPriorities">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#Proposal"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#hasX -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#hasX">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#Address"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#SpatialAddress"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#hasY -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#hasY">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#Address"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#SpatialAddress"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#myBalance -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#myBalance">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#Token"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#myExpectNo -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#myExpectNo">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#Proposal"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#myExpectYes -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#myExpectYes">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#Proposal"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#sellAmount -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#sellAmount">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#Action"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#MarketAction"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#SellAction"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#Action -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#Action"/>
+    
+
+
+    <!-- http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#Address -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#Address"/>
+    
+
+
+    <!-- http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#Agent -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#Agent"/>
+    
+
+
+    <!-- http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#BenefitGoal -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#BenefitGoal">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#Goal"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#BuyAction -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#BuyAction">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#Action"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#MarketAction"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#ConditionalToken -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#ConditionalToken">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#Token"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#FailGoal -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#FailGoal">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#Goal"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#HonorGoal"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#Goal -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#Goal"/>
+    
+
+
+    <!-- http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#GoalState -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#GoalState">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#State"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#HasToken -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#HasToken">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#Statement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#HonorGoal -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#HonorGoal">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#Goal"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#MarketAction -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#MarketAction">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#Action"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#MarketSystem -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#MarketSystem">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#System"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#NoToken -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#NoToken">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#ConditionalToken"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#Token"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#OtherToken -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#OtherToken">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#Token"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#PassGoal -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#PassGoal">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#Goal"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#HonorGoal"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#Permission -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#Permission"/>
+    
+
+
+    <!-- http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#Plan -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#Plan"/>
+    
+
+
+    <!-- http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#Proposal -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#Proposal"/>
+    
+
+
+    <!-- http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#ProposalState -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#ProposalState">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#State"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#ProposePermission -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#ProposePermission">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#Permission"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#Proposer -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#Proposer">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#Agent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#SellAction -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#SellAction">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#Action"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#MarketAction"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#SpatialAddress -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#SpatialAddress">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#Address"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#StableToken -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#StableToken">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#Token"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#State -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#State"/>
+    
+
+
+    <!-- http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#Statement -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#Statement"/>
+    
+
+
+    <!-- http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#Strategy -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#Strategy"/>
+    
+
+
+    <!-- http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#System -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#System"/>
+    
+
+
+    <!-- http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#Token -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#Token"/>
+    
+
+
+    <!-- http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#VoteAction -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#VoteAction">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#Action"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#VoteNoAction -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#VoteNoAction">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#Action"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#VoteAction"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#VotePermission -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#VotePermission">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#Permission"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#VoteSystem -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#VoteSystem">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#System"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#VoteYesAction -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#VoteYesAction">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#Action"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#VoteAction"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#Voter -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#Voter">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#Agent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#WaitAction -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#WaitAction">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#Action"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#YesToken -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#YesToken">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#ConditionalToken"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#Token"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#GNO -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#GNO">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#OtherToken"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#achieved -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#achieved">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#GoalState"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#State"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#active -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#active">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#GoalState"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#ProposalState"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#State"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#buyAndSell -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#buyAndSell">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#Strategy"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#buyNoToken -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#buyNoToken">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#Action"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#BuyAction"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#MarketAction"/>
+        <targetToken rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#noToken"/>
+        <buyAmount rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</buyAmount>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#buyPlan -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#buyPlan">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#Plan"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#buyYesToken -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#buyYesToken">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#Action"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#BuyAction"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#MarketAction"/>
+        <targetToken rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#yesToken"/>
+        <buyAmount rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</buyAmount>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#discarded -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#discarded">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#GoalState"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#State"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#failed -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#failed">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#ProposalState"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#State"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#makeContribution -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#makeContribution">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#BenefitGoal"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#Goal"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#HonorGoal"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#Proposal"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#makeMoney -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#makeMoney">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#BenefitGoal"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#Goal"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#HonorGoal"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#Proposal"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#marketSystem -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#marketSystem">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#MarketSystem"/>
+        <hasFee rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.02</hasFee>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#myPlan -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#myPlan">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#Plan"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#mySelf -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#mySelf">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#Agent"/>
+        <currentGoal rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#makeMoney"/>
+        <currentPlan rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#myPlan"/>
+        <myStrategy rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#buyAndSell"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#noToken -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#noToken">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#ConditionalToken"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#Token"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#YesToken"/>
+        <noTokenOf rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#proposal1"/>
+        <currentPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.3</currentPrice>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#none -->
+
+    <owl:Thing rdf:about="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#none">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#BenefitGoal"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#Goal"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#HonorGoal"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#Proposal"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#onlyBuy -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#onlyBuy">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#Strategy"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#proposal1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#proposal1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#Proposal"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#Token"/>
+        <hasNoToken rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#noToken"/>
+        <hasYesToken rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#yesToken"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#proposal2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#proposal2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#Proposal"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#Token"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#sellNoToken -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#sellNoToken">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#Action"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#BuyAction"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#MarketAction"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#SellAction"/>
+        <targetToken rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#noToken"/>
+        <sellAmount rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</sellAmount>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#sellYesToken -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#sellYesToken">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#Action"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#BuyAction"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#MarketAction"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#SellAction"/>
+        <targetToken rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#yesToken"/>
+        <sellAmount rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</sellAmount>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#spatialAddress -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#spatialAddress">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#SpatialAddress"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#submited -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#submited">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#ProposalState"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#State"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#successed -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#successed">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#ProposalState"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#State"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#voteNo -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#voteNo">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#VoteNoAction"/>
+        <targetProposal rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#proposal1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#voteYes -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#voteYes">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#VoteYesAction"/>
+        <targetProposal rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#proposal1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#yesToken -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#yesToken">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#ConditionalToken"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#Token"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#YesToken"/>
+        <yesTokenOf rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#proposal1"/>
+        <currentPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.5</currentPrice>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#ConditionalToken"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#OtherToken"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#StableToken"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#makeContribution"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#makeMoney"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#none"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Rules
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#x">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#token">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#p">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#y">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#market">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#fee">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#b">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#c">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#a">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#yes">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#plan">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#proposal">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">rule_select_buy_no_action</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#currentGoal"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#mySelf"/>
+                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#makeMoney"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#currentProposal"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#mySelf"/>
+                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#p"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#hasNoToken"/>
+                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#p"/>
+                                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#yes"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#expectBenefitReady"/>
+                                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#yes"/>
+                                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#a"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                <rdf:first>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+                                                        <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#greaterThan"/>
+                                                        <swrl:arguments>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                <rdf:first rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#a"/>
+                                                                <rdf:rest>
+                                                                    <rdf:Description>
+                                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</rdf:first>
+                                                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                                    </rdf:Description>
+                                                                </rdf:rest>
+                                                            </rdf:Description>
+                                                        </swrl:arguments>
+                                                    </rdf:Description>
+                                                </rdf:first>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                        <rdf:first>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#currentPlan"/>
+                                                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#mySelf"/>
+                                                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#plan"/>
+                                                            </rdf:Description>
+                                                        </rdf:first>
+                                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#hasAction"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#plan"/>
+                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#buyNoToken"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">rule_select_sell_yes_action</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#currentGoal"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#mySelf"/>
+                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#makeMoney"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#currentProposal"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#mySelf"/>
+                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#p"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#hasYesToken"/>
+                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#p"/>
+                                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#yes"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#expectBenefitReady"/>
+                                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#yes"/>
+                                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#a"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                <rdf:first>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+                                                        <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#lessThan"/>
+                                                        <swrl:arguments>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                <rdf:first rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#a"/>
+                                                                <rdf:rest>
+                                                                    <rdf:Description>
+                                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</rdf:first>
+                                                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                                    </rdf:Description>
+                                                                </rdf:rest>
+                                                            </rdf:Description>
+                                                        </swrl:arguments>
+                                                    </rdf:Description>
+                                                </rdf:first>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                        <rdf:first>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#currentPlan"/>
+                                                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#mySelf"/>
+                                                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#plan"/>
+                                                            </rdf:Description>
+                                                        </rdf:first>
+                                                        <rdf:rest>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                                <rdf:first>
+                                                                    <rdf:Description>
+                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#myStrategy"/>
+                                                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#mySelf"/>
+                                                                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#buyAndSell"/>
+                                                                    </rdf:Description>
+                                                                </rdf:first>
+                                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                            </rdf:Description>
+                                                        </rdf:rest>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#hasAction"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#plan"/>
+                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#sellYesToken"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">rule_select_buy_yes_action</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#currentGoal"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#mySelf"/>
+                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#makeMoney"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#currentProposal"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#mySelf"/>
+                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#proposal"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#hasYesToken"/>
+                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#proposal"/>
+                                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#token"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#expectBenefitReady"/>
+                                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#token"/>
+                                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#x"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                <rdf:first>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+                                                        <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#greaterThan"/>
+                                                        <swrl:arguments>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                <rdf:first rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#x"/>
+                                                                <rdf:rest>
+                                                                    <rdf:Description>
+                                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.0</rdf:first>
+                                                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                                    </rdf:Description>
+                                                                </rdf:rest>
+                                                            </rdf:Description>
+                                                        </swrl:arguments>
+                                                    </rdf:Description>
+                                                </rdf:first>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                        <rdf:first>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#currentPlan"/>
+                                                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#mySelf"/>
+                                                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#plan"/>
+                                                            </rdf:Description>
+                                                        </rdf:first>
+                                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#hasAction"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#plan"/>
+                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#buyYesToken"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">rule_vote_no</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#currentProposal"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#mySelf"/>
+                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#proposal"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#myExpectNo"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#proposal"/>
+                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#a"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+                                        <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#greaterThan"/>
+                                        <swrl:arguments>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                <rdf:first rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#a"/>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.5</rdf:first>
+                                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </swrl:arguments>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#currentPlan"/>
+                                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#mySelf"/>
+                                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#plan"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#hasAction"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#plan"/>
+                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#voteNo"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">rule_vote_yes</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#currentProposal"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#mySelf"/>
+                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#proposal"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#myExpectYes"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#proposal"/>
+                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#a"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+                                        <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#greaterThan"/>
+                                        <swrl:arguments>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                <rdf:first rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#a"/>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.5</rdf:first>
+                                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </swrl:arguments>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#currentPlan"/>
+                                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#mySelf"/>
+                                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#plan"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#hasAction"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#plan"/>
+                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#voteYes"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">compute the benefit of a plan</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">rule_no_token_benefit</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#NoToken"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#token"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#currentPrice"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#token"/>
+                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#x"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#hasNoToken"/>
+                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#p"/>
+                                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#token"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#myExpectNo"/>
+                                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#p"/>
+                                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#y"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                <rdf:first>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#hasFee"/>
+                                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#market"/>
+                                                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#fee"/>
+                                                    </rdf:Description>
+                                                </rdf:first>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                        <rdf:first>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+                                                                <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#multiply"/>
+                                                                <swrl:arguments rdf:parseType="Collection">
+                                                                    <rdf:Description rdf:about="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#b"/>
+                                                                    <rdf:Description rdf:about="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#fee"/>
+                                                                    <rdf:Description rdf:about="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#x"/>
+                                                                </swrl:arguments>
+                                                            </rdf:Description>
+                                                        </rdf:first>
+                                                        <rdf:rest>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                                <rdf:first>
+                                                                    <rdf:Description>
+                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+                                                                        <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#add"/>
+                                                                        <swrl:arguments rdf:parseType="Collection">
+                                                                            <rdf:Description rdf:about="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#c"/>
+                                                                            <rdf:Description rdf:about="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#b"/>
+                                                                            <rdf:Description rdf:about="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#x"/>
+                                                                        </swrl:arguments>
+                                                                    </rdf:Description>
+                                                                </rdf:first>
+                                                                <rdf:rest>
+                                                                    <rdf:Description>
+                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                                        <rdf:first>
+                                                                            <rdf:Description>
+                                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+                                                                                <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#subtract"/>
+                                                                                <swrl:arguments rdf:parseType="Collection">
+                                                                                    <rdf:Description rdf:about="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#a"/>
+                                                                                    <rdf:Description rdf:about="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#y"/>
+                                                                                    <rdf:Description rdf:about="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#c"/>
+                                                                                </swrl:arguments>
+                                                                            </rdf:Description>
+                                                                        </rdf:first>
+                                                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                                    </rdf:Description>
+                                                                </rdf:rest>
+                                                            </rdf:Description>
+                                                        </rdf:rest>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#expectBenefitReady"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#token"/>
+                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#a"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">rule_init_proposal</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#Proposal"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#x"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DifferentIndividualsAtom"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#x"/>
+                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#none"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#currentProposal"/>
+                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#mySelf"/>
+                                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#none"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#currentProposal"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#mySelf"/>
+                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#x"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">compute the benefit of a plan</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">rule_yes_token_benefit</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#YesToken"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#token"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#currentPrice"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#token"/>
+                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#x"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#hasYesToken"/>
+                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#p"/>
+                                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#token"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#hasFee"/>
+                                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#market"/>
+                                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#fee"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                <rdf:first>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+                                                        <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#multiply"/>
+                                                        <swrl:arguments rdf:parseType="Collection">
+                                                            <rdf:Description rdf:about="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#b"/>
+                                                            <rdf:Description rdf:about="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#fee"/>
+                                                            <rdf:Description rdf:about="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#x"/>
+                                                        </swrl:arguments>
+                                                    </rdf:Description>
+                                                </rdf:first>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                        <rdf:first>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+                                                                <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#add"/>
+                                                                <swrl:arguments rdf:parseType="Collection">
+                                                                    <rdf:Description rdf:about="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#c"/>
+                                                                    <rdf:Description rdf:about="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#b"/>
+                                                                    <rdf:Description rdf:about="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#x"/>
+                                                                </swrl:arguments>
+                                                            </rdf:Description>
+                                                        </rdf:first>
+                                                        <rdf:rest>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                                <rdf:first>
+                                                                    <rdf:Description>
+                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#myExpectYes"/>
+                                                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#p"/>
+                                                                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#y"/>
+                                                                    </rdf:Description>
+                                                                </rdf:first>
+                                                                <rdf:rest>
+                                                                    <rdf:Description>
+                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                                        <rdf:first>
+                                                                            <rdf:Description>
+                                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+                                                                                <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#subtract"/>
+                                                                                <swrl:arguments rdf:parseType="Collection">
+                                                                                    <rdf:Description rdf:about="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#a"/>
+                                                                                    <rdf:Description rdf:about="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#y"/>
+                                                                                    <rdf:Description rdf:about="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#c"/>
+                                                                                </swrl:arguments>
+                                                                            </rdf:Description>
+                                                                        </rdf:first>
+                                                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                                    </rdf:Description>
+                                                                </rdf:rest>
+                                                            </rdf:Description>
+                                                        </rdf:rest>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#expectBenefitReady"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#token"/>
+                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#a"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">rule_select_sell_no_action</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#currentGoal"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#mySelf"/>
+                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#makeMoney"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#currentProposal"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#mySelf"/>
+                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#p"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#hasNoToken"/>
+                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#p"/>
+                                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#yes"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#expectBenefitReady"/>
+                                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#yes"/>
+                                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#a"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                <rdf:first>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+                                                        <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#lessThan"/>
+                                                        <swrl:arguments>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                <rdf:first rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#a"/>
+                                                                <rdf:rest>
+                                                                    <rdf:Description>
+                                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</rdf:first>
+                                                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                                    </rdf:Description>
+                                                                </rdf:rest>
+                                                            </rdf:Description>
+                                                        </swrl:arguments>
+                                                    </rdf:Description>
+                                                </rdf:first>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                        <rdf:first>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#currentPlan"/>
+                                                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#mySelf"/>
+                                                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#plan"/>
+                                                            </rdf:Description>
+                                                        </rdf:first>
+                                                        <rdf:rest>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                                <rdf:first>
+                                                                    <rdf:Description>
+                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#myStrategy"/>
+                                                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#mySelf"/>
+                                                                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#buyAndSell"/>
+                                                                    </rdf:Description>
+                                                                </rdf:first>
+                                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                            </rdf:Description>
+                                                        </rdf:rest>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#hasAction"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#plan"/>
+                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#sellNoToken"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">init the goal of the agent</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">rule_init_goal</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#Goal"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#x"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DifferentIndividualsAtom"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#x"/>
+                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#none"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#currentGoal"/>
+                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#mySelf"/>
+                                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#none"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#currentGoalReady"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#mySelf"/>
+                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/rembe/ontologies/2021/3/zlagent#x"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
